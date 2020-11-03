@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    align-items: center;
+    min-height: 5vh;
+    a,
+    span {
+        all: unset;
+        cursor: pointer;
+        padding: 0.8em;
+        &:hover {
+            background-color: rgb(220, 244, 253);
+        }
+    }
+    .logout {
+        cursor: pointer;
+    }
+}
