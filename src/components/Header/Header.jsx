@@ -1,20 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
-// const Header = (props) => {
+
+
 const Header = (props) => {
-    
+
+
+
+    //const home = window.location.href="/"
+
+
     return (
         <header className="header">
-            <Link to="/">Home</Link>
-            {/* {props.user ? */}
-            
-                <div className="notLoggedIn">
-                    <Link to="/login">Login</Link>
-        
-                </div>
-
+            <NavLink to="/" exact>Home</NavLink>
+            <div className="notLoggedIn">
+                <NavLink to="/login" exact activeStyle={{ display: 'none' }}>Login</NavLink>
+            </div>
         </header>
     )
 }
