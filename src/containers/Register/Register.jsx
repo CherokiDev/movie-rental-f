@@ -1,11 +1,10 @@
 import React from 'react';
 import './Register.scss';
-import { connect } from 'react-redux';
-import { REGISTER } from '../../redux/types';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
-const Register = (props) => {
-    
+const Register = () => {
+    const history = useHistory();
     const handleSubmit = event =>{
         event.preventDefault(); // para evitar refrescar la página
         const body ={
@@ -18,8 +17,14 @@ const Register = (props) => {
             credit_card:event.target.credit_card.value
         };
         
-        axios.post(process.env.REACT_APP_BASE_URL+'/user/signup',body)
-        props.dispatch({ type: REGISTER, payload:{}});
+        axios.post(process.env.REACT_APP_BASE_URL+'/users/signup',body)
+        .then(res=>{
+            console.log(res.data)
+            setTimeout(() => {
+                history.push('/')
+            }, 1500);
+        })
+        .catch(error=>console.log(error))
     }
     return (
         <form className="register-form" onSubmit={handleSubmit}>
