@@ -17,6 +17,12 @@ const Header = (props) => {
             <div className="notLoggedIn">
                 <NavLink to="/login" exact activeStyle={{ display: 'none' }}>Login</NavLink>
             </div>
+            <div className="notLoggedIn">
+                <NavLink to="/login/register" exact activeStyle={{ display: 'none' }}>Register</NavLink>
+            </div>
+            <div className="notLoggedIn">
+                <NavLink to="/profile/movies" exact activeStyle={{ display: 'none' }}>Logout</NavLink>
+            </div>
         </header>
     )
 }
