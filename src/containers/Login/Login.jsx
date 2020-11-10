@@ -1,8 +1,9 @@
 // Importo las dependencias que vamos a emplear en el archivo
-import axios from 'axios';
 import React from 'react';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-
+import {LOGIN} from '../../redux/types';
+import { connect } from 'react-redux';
 
 // Hoja de estilos
 import './Login.scss'
@@ -11,26 +12,32 @@ import './Login.scss'
 const Login = ( props ) => {
 
     const history = useHistory ();
-
-    // Declaramos el valor de los datos que recogemos en la pantalla de LOGIN 
-    const user = {
-        email: props.email,
-        password: props.password
-    };
-
+    
     // Metodo POST hacia la base de datos
-    const Send = () => {
+    const send = event  => {
         
-        axios.post ('http://localhost:3000/users/login', user)
+        // Evitamos que la pagina refresque
+        event.preventDefault ();
+
+        // Declaramos el valor de los datos que recogemos en la pantalla de LOGIN 
+        const user = {
+            email: event.target.email.value,
+            password: event.target.password.value
+        };
+
+        // POST hacia el Back
+        axios.post ( process.env.REACT_APP_BASE_URL + '/users/login', user )
 
         .then ( res => {
             localStorage.setItem ('token', res.data.token);
             localStorage.setItem ('user', JSON.stringify (res.data))
 
-                // Redireccionamos al usuario hacia la vista que especifiquemos
-                setTimeout (() => {
-                    history.push ('/')
-                }, 1200)
+            props.dispatch ({ type: LOGIN, payload: res.data })
+
+            // Redireccionamos al usuario hacia la vista que especifiquemos
+            setTimeout (() => {
+                history.push ('/')
+            }, 1200)
         } )
         .catch ( error => { console.log (error)});
     }
@@ -45,20 +52,11 @@ const Login = ( props ) => {
                         <div className="formLogin">
                             <h1 className="textLogin">Iniciar sesión</h1>
                         </div>
-                        <div className="contInput">
-                            <label className="labelLogin">
-                                <input type="email" placeholder="Correo electrónico"/>
-                            </label>
-                        </div>
-                        <div className="nullForm"></div>
-                        <div className="contInput">
-                            <label className="labelLogin">
-                                <input type="password" placeholder="Contraseña"/>
-                            </label>
-                        </div>
-                        
-
-                
+                        <form className="formLogin" onSubmit={ send }>
+                            <input type="email" name="email" className="mailInput" placeholder="Correo electrónico"/>
+                            <input type="password" name="password" className="passwordInput" placeholder="Contraseña"/>
+                            <button type="submit" className="sendButton">Iniciar sesión</button>
+                        </form>
                     </div>
                 </div>
             </div>  
@@ -68,4 +66,4 @@ const Login = ( props ) => {
     )
 }
 
-export default Login;
+export default connect () (Login);
