@@ -1,0 +1,51 @@
+.containerSearch {
+
+    width: 40em;
+    height: 20em;
+
+    input{
+        all:unset;
+        padding: 1em;
+        background-color: rgb(170, 159, 159);
+        color: rgb(255, 255, 255);
+        margin-bottom: 2em;
+    }
+}
+
+.moviesSearched {
+    width: 40em;
+    height: 20em;
+    color: white;
+}
+
+
+
+
+
+
+.containerAllMovies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.allMovies{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.movies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+    height: 10em;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+        h3{
+            padding: 1em;
+        }
+}
