@@ -14,7 +14,7 @@ class Home extends Component {
                             <h3 className="form-text">¿Quieres ver algo ya? Escribe tu correo para crear una suscripción a Netflix o reactivarla.</h3>
                             <div className="form-inside">
                                 <input className="form-input" placeholder="Correo electrónico"></input>
-                                <button className="form-button">PRUEBA NETFLIX CON UN 50% DE DESCUENTO ></button>
+                                <button className="form-button">PRUEBA NETFLIX CON UN 50% DE DESCUENTO </button>
                             </div>
                         </form>
                         <h3 className="card-disclaimer">Solo los nuevos suscriptores podrán optar a esta oferta.</h3>
