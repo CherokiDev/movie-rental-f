@@ -1,0 +1,95 @@
+.containerLogin {
+    background-image:  url('../../img/background_netflix_large.jpg');
+    box-shadow: inset 0em 2em 5em 1em;
+    height: 100vh;
+    width: 100vw;
+}
+
+.nullHeadLogin {
+    background-color: transparent;
+    height: 10vh;
+    width: 100vw;
+}
+
+.loginBody {
+    background-color: transparent;
+    margin: auto;
+    height: 68vh;
+    width: 33vw;
+}
+
+.containForm {
+    background-color: rgba(0,0,0,.75);
+    height: 100%;
+    width: 70%;
+    border-radius: 4px;
+}
+
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    margin: auto;
+    padding: 25px 30px;
+    height: 45%;
+    width: 70%;
+}
+
+.textLogin {
+    background-color: transparent;
+    color: white;
+}
+
+.contInput {
+    height: 10%;
+    width: 100%;
+}
+
+.labelLogin {
+    background-color: #333333;
+}
+
+input {
+    background-color: #333333;
+    color: white;
+    font-size: small;
+    padding: 10px;
+    height: 25%;
+    width: 95%;
+    border: none;
+    border-radius: 4px;
+}
+
+.sendButton {
+    background-color: #e50914;
+    color: white;
+    vertical-align: auto;
+    height: 35%;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
+.nullForm {
+    height: 15%;
+}
+
+.nullForm2 {
+    height: 25%;
+}
+
+.linkRegister {
+    color: #696969;
+    margin: auto;
+    width: 60%;
+
+    & a {
+        text-decoration: none;;
+        color: white;
+        font-size: large;
+        
+        & :hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 const {
-    //LOGIN,
+    LOGIN,
     LOGOUT,
     /*GET_PROFILE,
     GET_ALL_USERS*/
@@ -13,12 +13,12 @@ const initialState = {
 };
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        /*case LOGIN:
+        case LOGIN:
             return {
                 ...state,
                 user: action.payload
             };
-        case GET_PROFILE:
+        /*case GET_PROFILE:
             return {
                 ...state,
                 user: action.payload
