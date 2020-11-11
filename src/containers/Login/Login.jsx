@@ -54,10 +54,13 @@ const Login = ( props ) => {
                         </div>
                         <form className="formLogin" onSubmit={ send }>
                             <input type="email" name="email" className="mailInput" placeholder="Correo electrónico"/>
+                            <div className="nullForm"></div>
                             <input type="password" name="password" className="passwordInput" placeholder="Contraseña"/>
-                            <button type="submit" className="sendButton">Iniciar sesión</button>
+                            <div className="nullForm2"></div>
+                            <button type="submit" className="sendButton"><h4>Iniciar sesión</h4></button>
                         </form>
                     </div>
+                    <div className="linkRegister">¿Todavía sin Netflix? <a href="/users/register">Suscríbete ya</a>.</div>
                 </div>
             </div>  
         </div>

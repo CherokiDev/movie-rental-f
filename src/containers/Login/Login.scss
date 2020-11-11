@@ -30,8 +30,8 @@
     flex-direction: column;
     background-color: transparent;
     margin: auto;
-    padding: 45px 30px;
-    height: 70%;
+    padding: 25px 30px;
+    height: 45%;
     width: 70%;
 }
 
@@ -52,13 +52,44 @@
 input {
     background-color: #333333;
     color: white;
+    font-size: small;
     padding: 10px;
-    height: 70%;
+    height: 25%;
     width: 95%;
     border: none;
     border-radius: 4px;
 }
 
+.sendButton {
+    background-color: #e50914;
+    color: white;
+    vertical-align: auto;
+    height: 35%;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
 .nullForm {
-    height: 5vh;
+    height: 15%;
+}
+
+.nullForm2 {
+    height: 25%;
+}
+
+.linkRegister {
+    color: #696969;
+    margin: auto;
+    width: 60%;
+
+    & a {
+        text-decoration: none;;
+        color: white;
+        font-size: large;
+        
+        & :hover {
+            text-decoration: underline;
+        }
+    }
 }
