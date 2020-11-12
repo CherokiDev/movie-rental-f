@@ -11,8 +11,22 @@ body {
     height: 5em;
     position: absolute;
     top: 0;
-}
+}    
+.buttonLogin {
+    background-color: #E50914;
+    color-adjust: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8em;
+    height: 2.3em;
+    border-radius: 0.25em;
+    a {
+        color: white;
+    }
 
+}
 .buttons {
     all: unset;
     display: flex;
@@ -37,8 +51,8 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
-    width: 8.375em;
-    height: 2.25em;
+    width: 10em;
+    height: 3em;
     a{
         display: flex;
         align-items: center;
