@@ -36,7 +36,7 @@ const Login = ( props ) => {
 
             // Redireccionamos al usuario hacia la vista que especifiquemos
             setTimeout (() => {
-                history.push ('/')
+                history.push ('/catalogue')
             }, 1200)
         } )
         .catch ( error => { console.log (error)});
