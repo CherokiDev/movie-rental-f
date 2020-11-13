@@ -1,51 +1,70 @@
-.containerSearch {
+.background{
+    display: flex;
+
+}
+
+.search {
 
     width: 40em;
     height: 20em;
+    margin-top: 5em;
 
     input{
         all:unset;
         padding: 1em;
         background-color: rgb(170, 159, 159);
         color: rgb(255, 255, 255);
-        margin-bottom: 2em;
     }
 }
 
-.moviesSearched {
-    width: 40em;
-    height: 20em;
-    color: white;
+.containerMovies {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 0em;
+    width: 100%;
 }
 
-
-
-
-
-
-.containerAllMovies {
+.titleMovies{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 15em;
+        img {
+            height: 10em;
+        }
 }
 
-.allMovies{
+.allMovies {
+    background-color: lightgreen;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    align-items: flex-end;
+    width: 100%;
+    height: 15em;
+        img {
+            height: 10em;
+        }
+    
 }
 
 .movies {
+    margin: 0.8em;
+    display: flex;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20em;
-    height: 10em;
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-        h3{
-            padding: 1em;
-        }
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
 }
