@@ -57,10 +57,11 @@ const Login = ( props ) => {
                             <div className="nullForm"></div>
                             <input type="password" name="password" className="passwordInput" placeholder="Contraseña"/>
                             <div className="nullForm2"></div>
-                            <button type="submit" className="sendButton"><h4>Iniciar sesión</h4></button>
+                            <button type="submit" className="sendButton">Iniciar sesión</button>
+                            <div className="nullForm3"></div>
+                            <div className="linkRegister">¿Todavía sin Netflix? <a href="/login/register">Regístate ya.</a></div>
                         </form>
                     </div>
-                    <div className="linkRegister">¿Todavía sin Netflix? <a href="/users/register">Suscríbete ya</a>.</div>
                 </div>
             </div>  
         </div>
