@@ -9,7 +9,8 @@ const {
 const initialState = {
     users: [],
     user: {},
-    movies: []
+    movies: [],
+    orders: []
 };
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -21,9 +22,8 @@ const reducer = (state = initialState, action) => {
         case GET_PROFILE:
             return {
                 ...state,
-                user: action.payload
+                orders: action.payload
             };
-
         case LOGOUT:
             return {
                 ...state,
