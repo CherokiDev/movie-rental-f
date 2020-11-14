@@ -1,9 +1,20 @@
+import axios from 'axios';
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import './Header.scss';
 
 const Header = (props) => {
+
+    const history = useHistory();
+
+    const salir = async() => {
+        localStorage.clear();
+        await axios.put(process.env.REACT_APP_BASE_URL + '/users/logout/' + props.user.email)
+        await history.push('/');
+        await window.location.reload();
+    }
+
     return (
         <header className="header">
             {props.user?.email
@@ -12,7 +23,7 @@ const Header = (props) => {
                     <div className="buttonHome"></div>
                     <NavLink to="/profile" className="button" exact activeStyle={{ display: 'none' }}>Alquiladas</NavLink>
                     <NavLink to="/catalogue" className="button" exact activeStyle={{ display: 'none' }}>Volver</NavLink>
-                    <NavLink to="/" className="button" exact activeStyle={{ display: 'none' }}>Salir</NavLink>
+                    <NavLink to="/" onClick={salir} className="button" exact activeStyle={{ display: 'none' }}>Salir</NavLink>
                 </div>
                 :
                 <div className="containerButtons">
