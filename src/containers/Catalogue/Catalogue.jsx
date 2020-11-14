@@ -15,7 +15,7 @@ const Catalogue = (props) => {
             }).catch((err) => {
                 console.log(err)
             });
-            // eslint-disable-next-line
+        // eslint-disable-next-line
     }, [])
 
     const [search, setSearch] = useState("")
@@ -37,12 +37,10 @@ const Catalogue = (props) => {
         })
         if (search !== "")
             return result.map(movie => <div className="movies" onClick={() => setSelectedMovie(movie)}>
-                <Button onClick={abrirModal}>+info</Button>
-                {/* <h4>{movie.title}</h4> */}
-                <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" /></div>)
+                <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} /></div>)
     }
 
-    
+
 
     const [modal, setModal] = useState(false)
 
@@ -54,15 +52,17 @@ const Catalogue = (props) => {
 
     const compruebaToken = localStorage.getItem('token');
 
-   
+
 
     const rentMovie = async () => {
-        
+
         console.log(selectedMovie.id)
         console.log(compruebaToken)
-        await axios.post('http://localhost:3000/orders', {movies:[selectedMovie.id]}, {  headers: {
-            Authorization: "Bearer " + compruebaToken
-        }});
+        await axios.post('http://localhost:3000/orders', { movies: [selectedMovie.id] }, {
+            headers: {
+                Authorization: "Bearer " + compruebaToken
+            }
+        });
         setModal({ abierto: !modal.abierto });
     }
 
@@ -72,21 +72,21 @@ const Catalogue = (props) => {
             <div className="body">
                 <div className="background">
                     <div className="search">
-                        <input type="text" onKeyUp={searchMovies}></input>
+                        <input type="text" placeholder="Buscar película" onKeyUp={searchMovies}></input>
                     </div>
 
                     <div className="containerMovies">
 
-                        <div className="titleMovies">
+                        <div className="moviesByTitle">
                             {searchEngine(props)}
                         </div>
 
-                        <div className="allMovies">
+                        <div className="moviesAll">
                             {props.movies?.map(movie =>
                                 <div className="movies" onClick={() => setSelectedMovie(movie)}>
-                                    <Button onClick={abrirModal}>+info</Button>
+                                    {/* <Button onClick={abrirModal}>+info</Button> */}
                                     {/* <h4>{movie.title}</h4> */}
-                                    <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" />
+                                    <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} />
                                 </div>)}
                         </div>
 
@@ -97,17 +97,23 @@ const Catalogue = (props) => {
             </div>
 
             <Modal className="modal" isOpen={modal.abierto}>
-                <ModalHeader>
-                    <h2>{selectedMovie?.title ?selectedMovie.title:""}</h2>
+                <ModalHeader className="headerModal">
+                    <h1 className="titleModal">{selectedMovie?.title ? selectedMovie.title : ""}</h1>
                 </ModalHeader>
 
-                <ModalBody>
-                    pelicula
-            </ModalBody>
+                <ModalBody className="bodyModal">
+                    <div className="imgModal">
+                        <img src={'https://image.tmdb.org/t/p/w185' + selectedMovie?.poster_path ? 'https://image.tmdb.org/t/p/w185' + selectedMovie.poster_path : ""} alt="" />
+                    </div>
+                    <div className="infoModal">
+                        <div className="overviewModal">{selectedMovie?.overview ? selectedMovie.overview : ""}</div>
+                        <div className="priceModal">Precio 5€</div>
+                    </div>
+                </ModalBody>
 
-                <ModalFooter>
-                    <Button onClick={rentMovie}>Alquilar</Button>
-                    <Button onClick={abrirModal}>Salir</Button>
+                <ModalFooter className="footerModal">
+                    <Button onClick={rentMovie} className="rentModal">Alquilar</Button>
+                    <Button onClick={abrirModal} className="cancelModal">Cancelar</Button>
                 </ModalFooter>
             </Modal>
         </>
