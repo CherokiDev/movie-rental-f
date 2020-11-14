@@ -1,8 +1,8 @@
 const {
     LOGIN,
     LOGOUT,
-    /*GET_PROFILE,
-    GET_ALL_USERS*/
+    GET_PROFILE,
+    /*GET_ALL_USERS*/
     GET_MOVIES
 } = require("./types");
 
@@ -18,11 +18,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 user: action.payload
             };
-        /*case GET_PROFILE:
+        case GET_PROFILE:
             return {
                 ...state,
                 user: action.payload
-            };*/
+            };
 
         case LOGOUT:
             return {
