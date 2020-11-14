@@ -22,12 +22,14 @@ const Profile = ( props ) => {
 
         // Peticion GET hacia la base de datos
         axios.get(process.env.REACT_APP_BASE_URL + '/orders', validate)
-
+        
+        
         .then ( res => {
             
             // Almacenamos la informacion en Redux
             props.dispatch({type: GET_PROFILE, payload: res.data});
             
+
         })
         .catch ( error => console.log ( error ))
 
