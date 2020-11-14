@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Register from './containers/Register/Register';
 import Catalogue from './containers/Catalogue/Catalogue';
 import Login from './containers/Login/Login';
+import Profile from './containers/Profile/Profile';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/login/register' component={Register} exact />
       <Route path='/catalogue' component={Catalogue} exact />
       <Route path='/login' component={Login} exact />
+      <Route path='/profile' component={Profile} exact />
     </Switch>
   </BrowserRouter >
   );
