@@ -3,8 +3,9 @@
 ---
 ![](src/img/logo_netflix.png)
 ## What is Movie Rental F? 🤔
-Es una aplicación que simula la página de Netflix. La aplicación muestra una lista de películas, permitiendo además hacer una búsqueda de éstas por título, con la finalidad de poder alquilarlas.
-Para ello, tiene que haber un usuario logeado. Si no existe, se puede registrar. Una vez logeado, el usuario puede ver las películas que tiene alquiladas, incluyendo la fecha de alquiler y de devolución. Cuando el usuario haya finalizado su visita a la aplicación, si él lo desea se puede deslogear..
+We are talking about an app that simulates Netflix website. It shows a list of films and allows to search by their titles in order to rent them.
+For that purpose, there must be a logged in user. If not, he may register. Once logged in he will be able to see which films he has rented, including when he rented them and which day he has to return them in. 
+If he wants, the user can log out once he has finished working with the app.
 > Note: This repository is the frontend of the application.
 > Backend is here: [repository](https://github.com/Cheroki84/movieSearchBackend)
 ---

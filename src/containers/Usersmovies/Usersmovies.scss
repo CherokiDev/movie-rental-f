@@ -1,0 +1,21 @@
+.background {
+    margin-top: 15em;
+}
+
+.allUsersmovies {
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    padding-top: 1em;
+
+}
+
+.tabla {
+    border: 1px solid black;
+    margin: 1em;
+    padding: 0.2em 2em;
+}

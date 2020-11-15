@@ -21,6 +21,7 @@ const Header = (props) => {
                 ?
                 <div className="containerButtons">
                     <div className="buttonHome"></div>
+                    {[1].includes(props.user.role) && <NavLink to ="/admin/usersmovies" className="button" exact activeStyle={{ display: 'none' }}>Ver todo (admin)</NavLink>}
                     <NavLink to="/profile" className="button" exact activeStyle={{ display: 'none' }}>Alquiladas</NavLink>
                     <NavLink to="/catalogue" className="button" exact activeStyle={{ display: 'none' }}>Volver</NavLink>
                     <NavLink to="/" onClick={salir} className="button" exact activeStyle={{ display: 'none' }}>Salir</NavLink>

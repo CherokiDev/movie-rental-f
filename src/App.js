@@ -6,6 +6,7 @@ import Register from './containers/Register/Register';
 import Catalogue from './containers/Catalogue/Catalogue';
 import Login from './containers/Login/Login';
 import Profile from './containers/Profile/Profile';
+import Usermovies from './containers/Usersmovies/Usersmovies';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/catalogue' component={Catalogue} exact />
       <Route path='/login' component={Login} exact />
       <Route path='/profile' component={Profile} exact />
+      <Route path="/admin/usersmovies" component={Usermovies} exact />
     </Switch>
   </BrowserRouter >
   );
