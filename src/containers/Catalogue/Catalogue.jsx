@@ -7,6 +7,19 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 
 const Catalogue = (props) => {
+    const [search, setSearch] = useState("")
+    const [selectedMovie, setSelectedMovie] = useState({})
+    const [modal, setModal] = useState(false)
+
+    const searchMovies = event => {
+        setSearch(event.target.value)
+    }
+
+    const abrirModal = () => {
+        setModal({ abierto: !modal.abierto });
+    }
+
+    const compruebaToken = localStorage.getItem('token');
 
     useEffect(() => {
         axios.get(process.env.REACT_APP_BASE_URL + '/movies/')
@@ -18,21 +31,8 @@ const Catalogue = (props) => {
         // eslint-disable-next-line
     }, [])
 
-    const [search, setSearch] = useState("")
-
-
-    const searchMovies = event => {
-        setSearch(event.target.value)
-        //console.log(event.target, search);
-    }
-
-    const [selectedMovie, setSelectedMovie] = useState({})
-
-
-
     const searchEngine = (props) => {
         const result = props.movies?.filter(movie => {
-            //console.log(search, movie.title.indexOf(search))
             return movie.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
         })
         if (search !== "")
@@ -40,24 +40,7 @@ const Catalogue = (props) => {
                 <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} /></div>)
     }
 
-
-
-    const [modal, setModal] = useState(false)
-
-
-
-    const abrirModal = () => {
-        setModal({ abierto: !modal.abierto });
-    }
-
-    const compruebaToken = localStorage.getItem('token');
-
-
-
     const rentMovie = async () => {
-
-        console.log(selectedMovie.id)
-        console.log(compruebaToken)
         await axios.post(process.env.REACT_APP_BASE_URL + '/orders', { movies: [selectedMovie.id] }, {
             headers: {
                 Authorization: "Bearer " + compruebaToken
@@ -66,7 +49,6 @@ const Catalogue = (props) => {
         setModal({ abierto: !modal.abierto });
     }
 
-
     return (
         <>
             <div className="body">
@@ -74,26 +56,20 @@ const Catalogue = (props) => {
                     <div className="search">
                         <input type="text" placeholder="Buscar película" onKeyUp={searchMovies}></input>
                     </div>
-
                     <div className="containerMovies">
-
                         <div className="moviesByTitle">
                             {searchEngine(props)}
                         </div>
-
                         <div className="moviesAll">
                             {props.movies?.map(movie =>
-                                <div className="movies" onClick={() => setSelectedMovie(movie)}>
+                                <div className="movies" key={movie.id} onClick={() => setSelectedMovie(movie)}>
                                     {/* <Button onClick={abrirModal}>+info</Button> */}
                                     {/* <h4>{movie.title}</h4> */}
                                     <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} />
                                 </div>)}
                         </div>
-
                     </div>
                 </div>
-
-
             </div>
 
             <Modal className="modal" isOpen={modal.abierto}>
