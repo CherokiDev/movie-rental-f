@@ -1,17 +1,19 @@
 .background {
     background-image: url('../../img/background_netflix_large.jpg');
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
 .nullHeader {
-    height: 12vh;
     width: 100%;
 }
 
 .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.75);
-    height: 60vh;
+    height: 70%;
 }
 
 .registerText {
@@ -27,7 +29,7 @@
     align-items: center;
     padding: 2em;
     height: 75%;
-    max-width: 60vw;
+    width: 60%;
     background-color: transparent;
 }
     
