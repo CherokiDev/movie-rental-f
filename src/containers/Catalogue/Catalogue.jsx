@@ -51,12 +51,13 @@ const Catalogue = (props) => {
 
     return (
         <>
-            <div className="body">
+            <div className="bodyCat">
                 <div className="background">
                     <div className="search">
                         <input type="text" placeholder="Buscar" onKeyUp={searchMovies}></input>
                     </div>
                     <div className="containerMovies">
+                        <div className="searchText">Busqueda</div>
                         <div className="moviesByTitle">
                             {searchEngine(props)}
                         </div>
