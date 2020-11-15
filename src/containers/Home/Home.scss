@@ -93,14 +93,29 @@
     width: 20em;
     height: 2em;
     background-color: white;
-    
+    color: grey;
+    border-radius: 4px 0px 0px 4px;
 }
 
 .form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30em;
-    height: 3em;
+    height: 3.6em;
     background-color: #E50914;
     color: white;
+    border-radius: 0px 4px 4px 0px;
+
+    & a {
+        all: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3.6em;
+        width: 30em;
+        cursor: pointer;
+    }
 }
 
 
