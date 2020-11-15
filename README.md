@@ -1,4 +1,4 @@
-![](https://visitor-badge.glitch.me/badge?page_id=cheroki84.movie-rental-)
+![](https://visitor-badge.glitch.me/badge?page_id=cheroki84.movie-rental-f)
 
 ---
 ![](src/img/logo_netflix.png)
@@ -22,17 +22,30 @@ If he wants, the user can log out once he has finished working with the app.
 ## Do you want to see the application running? 🚀
  [Click here!](https://movie-rental-f.herokuapp.com/)
 ---
+---
 ## Some working samples ⚙️
 #### Homepage
 ![](src/img/homepage.jpg)
 ---
-#### Login, view appointments and delete one
-![](src/img/captura2.gif)
+
+#### Login
+![](src/img/login.jpg)
 ---
 
+#### Register
+![](src/img/register.jpg)
+---
+
+#### Catalogue
+![](src/img/catalogue.gif)
+---
+
+#### Rented
+![](src/img/rented.jpg)
+---
+
+#### Admin
+![](src/img/admin.jpg)
+---
+---
 [![Linkedin: Miguel Angel Morato](https://img.shields.io/badge/-Miguel_Ángel-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anmol-p-singh/)](https://www.linkedin.com/in/miguelangelmorato84/) **+** [![Linkedin: David Pitarch Gonzalez](https://img.shields.io/badge/-David-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anmol-p-singh/)](https://www.linkedin.com/in/david-pitarch-gonzalez-26bb8554/) **+** [![Linkedin: Carlos Moreno Garcia](https://img.shields.io/badge/-Carlos-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anmol-p-singh/)](https://www.linkedin.com/in/carlos-moreno-garcia-06691918a/) **= TEAMWORK!**
-
-
-
-
-
