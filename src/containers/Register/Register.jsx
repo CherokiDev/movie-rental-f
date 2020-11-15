@@ -21,7 +21,7 @@ const Register = () => {
             .then(res => {
                 console.log(res.data)
                 setTimeout(() => {
-                    history.push('/')
+                    history.push('/login')
                 }, 1500);
             })
             .catch(error => console.log(error))
