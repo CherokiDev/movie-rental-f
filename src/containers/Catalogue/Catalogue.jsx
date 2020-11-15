@@ -54,7 +54,7 @@ const Catalogue = (props) => {
             <div className="body">
                 <div className="background">
                     <div className="search">
-                        <input type="text" placeholder="Buscar película" onKeyUp={searchMovies}></input>
+                        <input type="text" placeholder="Buscar" onKeyUp={searchMovies}></input>
                     </div>
                     <div className="containerMovies">
                         <div className="moviesByTitle">

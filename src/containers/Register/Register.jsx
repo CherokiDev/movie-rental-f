@@ -29,16 +29,20 @@ const Register = () => {
     return (
         <div className="body">
             <div className="background">
-                <form className="register-form" onSubmit={handleSubmit}>
-                    <input className="inputreg" type="text" name="firstname" required placeholder="Introduce tu nombre" />
-                    <input className="inputreg" type="text" name="surname" required placeholder="Introduce tu apellido" />
-                    <input className="inputreg" type="email" name="email" required placeholder="Introduce tu email" />
-                    <input className="inputreg" type="password" name="password" required placeholder="Introduce tu contraseña" />
-                    <input className="inputreg" type='text' name="phone" required placeholder="Introduce tu número de teléfono" />
-                    <input className="inputreg" type="text" name="birthdate" required placeholder="Introduce tu fecha de nacimiento" />
-                    <input className="inputreg" type="text" name="credit_card" required placeholder="Introduce el número de tu tarjeta de credito" />
-                    <button type="submit">Regístrate</button>
-                </form>
+                <div className="nullHeader"></div>
+                <div className="formContainer">
+                    <div className="registerText"><h2>Regístrate ahora</h2></div>
+                    <form className="register-form" onSubmit={handleSubmit}>
+                        <input className="inputreg" type="text" name="firstname" required placeholder="Nombre" />
+                        <input className="inputreg" type="text" name="surname" required placeholder="Apellidos" />
+                        <input className="inputreg" type="email" name="email" required placeholder="Correo electrónico" />
+                        <input className="inputreg" type="password" name="password" required placeholder="Contraseña" />
+                        <input className="inputreg" type='text' name="phone" required placeholder="Número de teléfono" />
+                        <input className="inputreg" type="text" name="birthdate" required placeholder="Fecha de nacimiento" />
+                        <input className="inputreg" type="text" name="credit_card" required placeholder="Número de tarjeta" />
+                        <button type="submit">Regístrate</button>
+                    </form>
+                </div>
             </div>
         </div>
     )
