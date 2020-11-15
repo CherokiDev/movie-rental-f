@@ -7,7 +7,7 @@ const Profile = () => {
     const compruebaId = JSON.parse(localStorage.getItem('user'));
 
     const getRented = (id) => {
-        return axios.get('http://localhost:3000/orders/' + id)
+        return axios.get(process.env.REACT_APP_BASE_URL + '/orders/' + id)
             .then((res) => {
                 setRented(res.data);
                 return res;

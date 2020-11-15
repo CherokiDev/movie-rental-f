@@ -58,7 +58,7 @@ const Catalogue = (props) => {
 
         console.log(selectedMovie.id)
         console.log(compruebaToken)
-        await axios.post('http://localhost:3000/orders', { movies: [selectedMovie.id] }, {
+        await axios.post(process.env.REACT_APP_BASE_URL + '/orders', { movies: [selectedMovie.id] }, {
             headers: {
                 Authorization: "Bearer " + compruebaToken
             }
