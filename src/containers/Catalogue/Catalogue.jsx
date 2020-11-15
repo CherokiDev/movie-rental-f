@@ -52,7 +52,7 @@ const Catalogue = (props) => {
     return (
         <>
             <div className="bodyCat">
-                <div className="background">
+                <div className="backgroundCat">
                     <div className="search">
                         <input type="text" placeholder="Buscar" onKeyUp={searchMovies}></input>
                     </div>

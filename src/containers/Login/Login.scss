@@ -78,6 +78,9 @@ input {
 }
 
 .nullForm2 {
+    padding-top: 6px;
+    text-align: center;
+    color: #ffffff;
     height: 25%;
 }
 .nullForm3 {
@@ -85,7 +88,7 @@ input {
 }
 .linkRegister {
     font-size: 1em;
-    color: white;
+    color: #a8a8a8;
     margin: auto;
     width: 70%;
 
@@ -93,6 +96,7 @@ input {
         text-decoration: none;
         color: white;
         font-size: 1.2em;
+        font-weight: bold;
         
         & :hover {
             text-decoration: underline;
