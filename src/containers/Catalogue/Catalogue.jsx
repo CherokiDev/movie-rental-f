@@ -56,11 +56,9 @@ const Catalogue = (props) => {
                     <div className="search">
                         <input type="text" placeholder="Buscar" onKeyUp={searchMovies}></input>
                     </div>
+                    
                     <div className="containerMovies">
                         <div className="searchText">Busqueda</div>
-                        <div className="moviesByTitle">
-                            {searchEngine(props)}
-                        </div>
                         <div className="moviesAll">
                             {props.movies?.map(movie =>
                                 <div className="movies" key={movie.id} onClick={() => setSelectedMovie(movie)}>
@@ -69,6 +67,10 @@ const Catalogue = (props) => {
                                     <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} />
                                 </div>)}
                         </div>
+                        <div className="moviesByTitle">
+                            {searchEngine(props)}
+                        </div>
+                        
                     </div>
                 </div>
             </div>
