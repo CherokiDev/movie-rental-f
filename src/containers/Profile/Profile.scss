@@ -1,5 +1,24 @@
-.getInfo {
-    margin-top: 250px;
-    height: 10vh;
-    width: 10vw;
+.containerRented {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 40em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rented {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.imgRented {
+    padding: 0.5em;
+    border-radius: 1em;
 }

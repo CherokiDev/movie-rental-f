@@ -1,47 +1,45 @@
-// Importo las dependencias necesarias
-import React from 'react';
 import axios from 'axios';
-import {GET_PROFILE} from '../../redux/types';
-import {connect} from 'react-redux';
-
-
-// Hoja de estilos
+import React, { useEffect, useState } from 'react'
 import './Profile.scss';
 
-// Logica de la pagina 'Profile'
-const Profile = ( props ) => {
+const Profile = () => {
+    const [rented, setRented] = useState([]);
+    const compruebaId = JSON.parse(localStorage.getItem('user'));
 
-    // Funcion para traer los pedidos actules del usuario
-    const getOrders = () => {
-
-        // Obtengo el token del Local Storage
-        const token = localStorage.getItem ('token');
-
-        // Creo una variable para enviar el token mediante la propiedad 'Bearer Token' en el Header
-        const validate = { headers: { Authorization: `Bearer ${token}` }};
-
-        // Peticion GET hacia la base de datos
-        axios.get(process.env.REACT_APP_BASE_URL + '/orders', validate)
-        
-        
-        .then ( res => {
-            
-            // Almacenamos la informacion en Redux
-            props.dispatch({type: GET_PROFILE, payload: res.data});
-            
-
-        })
-        .catch ( error => console.log ( error ))
-
+    const getRented = (id) => {
+        return axios.get('http://localhost:3000/orders/' + id)
+            .then((res) => {
+                setRented(res.data);
+                return res;
+            }).catch((err) => {
+                console.log(err);
+            });
     }
 
+    useEffect(() => {
+        const moviesRented = async () => {
+            await getRented(compruebaId.id)
+        }
+        moviesRented()
+    }, []);
+
+
     return (
-
-        <div className="orders">PRUEBA
-            <button type='button' className="getInfo" onClick={getOrders}></button>
-        </div>
-
+        <>
+            <div className="body">
+                <div className="background">
+                <div className="containerRented">
+                    {rented?.map(rented =>
+                        <div className="rented" key={rented.id}> FECHA DE ALQUILER {rented.createdAt} <br /> FECHA DE DEVOLUCIÓN {rented.returnDate} {rented.movies.map(movie =>
+                            <div className="titleRented"> {/* {movie.title} */}
+                                <img className="imgRented" src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} /> </div>)}
+                        </div>)}
+                </div>
+                </div>
+            </div>
+        </>
     )
 }
 
-export default connect () (Profile);
+
+export default Profile;
