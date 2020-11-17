@@ -35,7 +35,7 @@ const Catalogue = (props) => {
         const result = props.movies?.filter(movie => {
             return movie.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
         })
-        if (search !== "" && search.length >= 4)
+        if (search?.length >= 4)
             return result.map(movie => <div className="movies" onClick={() => setSelectedMovie(movie)}>
                 <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} /></div>)
     }
