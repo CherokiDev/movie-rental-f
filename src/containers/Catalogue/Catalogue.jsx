@@ -35,7 +35,7 @@ const Catalogue = (props) => {
         const result = props.movies?.filter(movie => {
             return movie.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
         })
-        if (search !== "")
+        if (search !== "" && search.length >= 4)
             return result.map(movie => <div className="movies" onClick={() => setSelectedMovie(movie)}>
                 <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} /></div>)
     }
@@ -58,7 +58,9 @@ const Catalogue = (props) => {
                     </div>
                     
                     <div className="containerMovies">
-                        <div className="searchText">Busqueda</div>
+                        <div className="moviesByTitle">
+                            {searchEngine(props)}
+                        </div>
                         <div className="moviesAll">
                             {props.movies?.map(movie =>
                                 <div className="movies" key={movie.id} onClick={() => setSelectedMovie(movie)}>
@@ -67,10 +69,6 @@ const Catalogue = (props) => {
                                     <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} />
                                 </div>)}
                         </div>
-                        <div className="moviesByTitle">
-                            {searchEngine(props)}
-                        </div>
-                        
                     </div>
                 </div>
             </div>
