@@ -26,6 +26,11 @@ const Register = () => {
             })
             .catch(error => console.log(error))
     }
+
+    const _onFocus = e => {
+        e.currentTarget.type = "date";
+    }
+
     return (
         <div className="body">
             <div className="background">
@@ -38,7 +43,7 @@ const Register = () => {
                         <input className="inputreg" type="email" name="email" required placeholder="Correo electrónico" />
                         <input className="inputreg" type="password" name="password" required placeholder="Contraseña" />
                         <input className="inputreg" type='text' name="phone" required placeholder="Número de teléfono" />
-                        <input className="inputreg" type="text" name="birthdate" required placeholder="Fecha de nacimiento" />
+                        <input className="inputreg" type="text" name="birthdate" onFocus= {_onFocus} required placeholder="Fecha de nacimiento" />
                         <input className="inputreg" type="text" name="credit_card" required placeholder="Número de tarjeta" />
                         <button type="submit">Regístrate</button>
                     </form>
