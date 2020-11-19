@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
+import { LOGOUT } from '../../redux/types';
 import './Header.scss';
 
 const Header = (props) => {
@@ -11,8 +12,8 @@ const Header = (props) => {
     const salir = async() => {
         localStorage.clear();
         await axios.put(process.env.REACT_APP_BASE_URL + '/users/logout/' + props.user.email)
-        await history.push('/');
-        await window.location.reload();
+        history.push('/');
+        await props.dispatch({ type: LOGOUT, payload: {}});
     }
 
     return (
