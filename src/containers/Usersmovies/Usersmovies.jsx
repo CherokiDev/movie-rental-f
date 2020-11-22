@@ -40,7 +40,6 @@ const Usersmovies = () => {
                     </div>
 
 
-
                     <div className="borde">
                         <div>PELÍCULA</div>
                         {all?.map(usersmovies => <div className="usersmovies">
@@ -53,9 +52,6 @@ const Usersmovies = () => {
                     </div>
 
 
-
-                    
-
                     <div className="borde">
                        <div> FECHA DE ALQUILER</div>
                     {all?.map(usersmovies => <div className="usersmovies">
@@ -67,8 +63,6 @@ const Usersmovies = () => {
                     </div>
 
 
-
-
                     <div className="borde">
                        <div>FECHA DE DEVOLUCIÓN</div>
                     {all?.map(usersmovies => <div className="usersmovies">
@@ -78,32 +72,6 @@ const Usersmovies = () => {
                         </div>
                     </div>)}
                     </div>
-
- 
-
-
-
-
-
-                    {/* {all?.map(usersmovies => <div className="usersmovies">
-
-                        <div className="tabla">
-
-
-                            <div> {usersmovies.User.email}</div>
-
-
-                            {usersmovies.movies.map(movie =>
-                                <div>PELÍCULA {movie.title} </div>)}
-                            <div>ALQUILADA: {usersmovies.createdAt}</div>
-                            <div>DEVOLUCIÓN: {usersmovies.returnDate}</div>
-
-
-                        </div>
-
-
-
-                    </div>)} */}
 
                 </div>
             </div>

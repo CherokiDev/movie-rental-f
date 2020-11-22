@@ -4,29 +4,21 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { LOGIN } from '../../redux/types';
 import { connect } from 'react-redux';
-
-// Hoja de estilos
 import './Login.scss'
 
-// Logica de la función 'Login'
 const Login = (props) => {
 
     const history = useHistory();
     const [msgError, setMsgError] = useState();
-
-    // Metodo POST hacia la base de datos
+    
     const send = event => {
-
-        // Evitamos que la pagina refresque
         event.preventDefault();
 
-        // Declaramos el valor de los datos que recogemos en la pantalla de LOGIN 
         const user = {
             email: event.target.email.value,
             password: event.target.password.value
         };
 
-        // POST hacia el Back
         axios.post(process.env.REACT_APP_BASE_URL + '/users/login', user)
 
             .then(res => {
@@ -35,7 +27,6 @@ const Login = (props) => {
 
                 props.dispatch({ type: LOGIN, payload: res.data })
 
-                // Redireccionamos al usuario hacia la vista que especifiquemos
                 setTimeout(() => {
                     history.push('/catalogue')
                 }, 1200)

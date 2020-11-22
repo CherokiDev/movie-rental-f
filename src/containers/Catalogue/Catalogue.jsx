@@ -21,6 +21,15 @@ const Catalogue = (props) => {
 
     const compruebaToken = localStorage.getItem('token');
 
+    const searchEngine = (props) => {
+        const result = props.movies?.filter(movie => {
+            return movie.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
+        })
+        if (search)
+            return result.map(movie => <div className="movies" onClick={() => setSelectedMovie(movie)}>
+                <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} /></div>)
+    }
+
     useEffect(() => {
         axios.get(process.env.REACT_APP_BASE_URL + '/movies/')
             .then(res => {
@@ -31,15 +40,7 @@ const Catalogue = (props) => {
         // eslint-disable-next-line
     }, [])
 
-    const searchEngine = (props) => {
-        const result = props.movies?.filter(movie => {
-            return movie.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
-        })
-        if (search?.length >= 4)
-            return result.map(movie => <div className="movies" onClick={() => setSelectedMovie(movie)}>
-                <img src={'https://image.tmdb.org/t/p/w185' + movie.poster_path} alt="" onClick={abrirModal} /></div>)
-    }
-
+    
     const rentMovie = async () => {
         await axios.post(process.env.REACT_APP_BASE_URL + '/orders', { movies: [selectedMovie.id] }, {
             headers: {
@@ -75,15 +76,15 @@ const Catalogue = (props) => {
 
             <Modal className="modal" isOpen={modal.abierto}>
                 <ModalHeader className="headerModal">
-                    <h1 className="titleModal">{selectedMovie?.title ? selectedMovie.title : ""}</h1>
+                    <h1 className="titleModal">{selectedMovie?.title && selectedMovie.title}</h1>
                 </ModalHeader>
 
                 <ModalBody className="bodyModal">
                     <div className="imgModal">
-                        <img src={'https://image.tmdb.org/t/p/w185' + selectedMovie?.poster_path ? 'https://image.tmdb.org/t/p/w185' + selectedMovie.poster_path : ""} alt="" />
+                        <img src={'https://image.tmdb.org/t/p/w185' + selectedMovie?.poster_path && 'https://image.tmdb.org/t/p/w185' + selectedMovie.poster_path} alt="" />
                     </div>
                     <div className="infoModal">
-                        <div className="overviewModal">{selectedMovie?.overview ? selectedMovie.overview : ""}</div>
+                        <div className="overviewModal">{selectedMovie?.overview && selectedMovie.overview}</div>
                         <div className="priceModal">Precio 5€</div>
                     </div>
                 </ModalBody>

@@ -16,13 +16,16 @@ const Header = (props) => {
         await props.dispatch({ type: LOGOUT, payload: {}});
     }
 
+
+    const adminRoles = [1];
+
     return (
         <header className="header">
             {props.user?.email
                 ?
                 <div className="containerButtons">
                     <div className="buttonHome"></div>
-                    {[1].includes(props.user.role) && <NavLink to ="/admin/usersmovies" className="button" exact activeStyle={{ display: 'none' }}>Ver todo (admin)</NavLink>}
+                    {adminRoles.includes(props.user.role) && <NavLink to ="/admin/usersmovies" className="button" exact activeStyle={{ display: 'none' }}>Ver todo (admin)</NavLink>}
                     <NavLink to="/profile" className="button" exact activeStyle={{ display: 'none' }}>Alquiladas</NavLink>
                     <NavLink to="/catalogue" className="button" exact activeStyle={{ display: 'none' }}>Volver</NavLink>
                     <NavLink to="/" onClick={salir} className="button" exact activeStyle={{ display: 'none' }}>Salir</NavLink>

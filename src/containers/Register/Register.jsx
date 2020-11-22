@@ -6,7 +6,7 @@ import axios from 'axios';
 const Register = () => {
     const history = useHistory();
     const handleSubmit = event => {
-        event.preventDefault(); // para evitar refrescar la página
+        event.preventDefault();
         const body = {
             firstname: event.target.firstname.value,
             surname: event.target.surname.value,
