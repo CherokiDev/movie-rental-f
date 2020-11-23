@@ -51,7 +51,7 @@ const Login = (props) => {
                             <div className="nullForm2">{msgError}</div>
                             <button type="submit" className="sendButton">Iniciar sesión</button>
                             <div className="nullForm3"></div>
-                            <div className="linkRegister">¿Todavía sin Netflix? <a className="underlineLink" href="/login/register">Regístate ya.</a></div>
+                            <div className="linkRegister">¿Todavía sin Nitflex? <a className="underlineLink" href="/login/register">Regístate ya.</a></div>
                         </form>
                     </div>
                 </div>

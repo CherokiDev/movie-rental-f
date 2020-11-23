@@ -11,10 +11,10 @@ class Home extends Component {
 50 % de descuento los dos primeros meses.</h1>
                         <h2 className="card-subtitle">Disfruta donde quieras. Cancela cuando quieras.</h2>
                         <form className="form">
-                            <h3 className="form-text">¿Quieres ver algo ya? Escribe tu correo para crear una suscripción a Netflix o reactivarla.</h3>
+                            <h3 className="form-text">¿Quieres ver algo ya? Escribe tu correo para crear una suscripción a Nitflex o reactivarla.</h3>
                             <div className="form-inside">
                                 <input className="form-input" placeholder="Correo electrónico"></input>
-                                <div className="form-button"><a href="login/register">PRUEBA NETFLIX CON UN 50% DE DESCUENTO</a></div>
+                                <div className="form-button"><a href="login/register">PRUEBA NITFLEX CON UN 50% DE DESCUENTO</a></div>
                             </div>
                         </form>
                         <h3 className="card-disclaimer">Solo los nuevos suscriptores podrán optar a esta oferta.</h3>

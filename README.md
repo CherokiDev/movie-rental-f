@@ -1,7 +1,7 @@
 ![](https://visitor-badge.glitch.me/badge?page_id=cheroki84.movie-rental-f)
 
 ---
-![](src/img/logo_netflix.png)
+![](src/img/logo_nitflex.png)
 ## What is Movie Rental F? 🤔
 We are talking about an app that simulates Netflix website. It shows a list of films and allows to search by their titles in order to rent them.
 For that purpose, there must be a logged in user. If not, he may register. Once logged in he will be able to see which films he has rented, including when he rented them and which day he has to return them in. 
